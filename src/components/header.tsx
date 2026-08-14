@@ -1,5 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import { WhatsAppLink } from "@/components/whatsapp-link";
+import lanaiLogoAzul from "../../LANAI_LOGO_AZUL_0521.png";
 
 const links = [
   ["Início", "/"],
@@ -17,7 +19,9 @@ function NavigationLinks() {
 export function Header() {
   return (
     <header className="site-header">
-      <Link className="brand" href="/" aria-label="Lanai — página inicial">LANAI</Link>
+      <Link className="brand brand-header" href="/" aria-label="Lanai — página inicial">
+        <Image src={lanaiLogoAzul} alt="Lanai" priority />
+      </Link>
       <nav className="desktop-nav" aria-label="Navegação principal"><NavigationLinks /></nav>
       <details className="mobile-nav"><summary>Menu</summary><nav aria-label="Navegação principal para celular"><NavigationLinks /></nav></details>
     </header>

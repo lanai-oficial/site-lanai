@@ -3,6 +3,9 @@ import type { ReactNode } from "react";
 import { AnalyticsPageView } from "@/components/analytics-page-view";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
+import "@fontsource/arimo/400.css";
+import "@fontsource/open-sans/300.css";
+import "@fontsource/open-sans-condensed/700.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
