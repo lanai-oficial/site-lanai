@@ -1,0 +1,29 @@
+{
+  "name": "site-lanai",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "check:content": "node scripts/check-content.mjs",
+    "check:visual": "node scripts/visual-review.mjs"
+  },
+  "dependencies": {
+    "next": "15.5.23",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "3.3.1",
+    "@playwright/test": "1.55.0",
+    "@types/node": "22.15.30",
+    "@types/react": "19.1.8",
+    "@types/react-dom": "19.1.6",
+    "eslint": "9.28.0",
+    "eslint-config-next": "15.5.23",
+    "typescript": "5.8.3"
+  }
+}
