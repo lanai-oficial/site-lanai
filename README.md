@@ -60,3 +60,8 @@ As capturas geradas localmente ficam em `docs/screenshots`, diretório ignorado 
 ### Registry npm
 
 O projeto fixa somente o registry público oficial em `.npmrc` e não contém tokens ou credenciais. Para diagnosticar uma falha de instalação, execute `npm config get registry` e `curl -I https://registry.npmjs.org/react`. Se o registry estiver correto, mas a resposta `403` vier de um proxy da rede, o responsável pelo ambiente deverá liberar acesso HTTPS a `registry.npmjs.org`; trocar credenciais do projeto não resolve um bloqueio de saída da infraestrutura.
+## Referência visual e estrutural
+
+Protótipo Marvel: https://marvelapp.com/prototype/1bhh3544/screen/96689979
+
+Usar este protótipo como referência principal de estrutura, layout, navegação e organização das páginas do site Lanai.
