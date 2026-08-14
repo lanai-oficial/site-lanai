@@ -103,6 +103,42 @@ h1,h2,h3 { letter-spacing:-.025em; }
 .about-hero>img { object-fit:cover; object-position:center 42%; }
 .about-hero>div { position:relative; z-index:2; }
 .about-hero h1 { margin:0; }
+.about-hero-copy { max-width:70rem; }
+.about-hero-copy h1 { font-size:clamp(4rem,9vw,8.5rem); }
+.about-hero-copy>p:last-child { margin:1.5rem 0 0; font-family:var(--font-subtitle),Arial,sans-serif; font-size:clamp(1rem,1.8vw,1.3rem); }
+.about-story h2 { margin-bottom:0; }
+.about-origin { display:grid; grid-template-columns:.18fr 1fr .75fr; gap:clamp(2rem,5vw,6rem); align-items:start; }
+.chapter-number { font-family:var(--font-title),Arial,sans-serif; font-size:clamp(2.5rem,5vw,5rem); line-height:1; color:var(--brand-primary); }
+.about-origin h2 { max-width:40rem; }
+.about-lead { max-width:31rem; font-size:clamp(1rem,1.5vw,1.2rem); }
+.about-image-chapter { display:grid; grid-template-columns:1.25fr .75fr; min-height:80svh; background:var(--cream); }
+.about-tall-image { position:relative; min-height:80svh; }
+.about-tall-image img { object-fit:cover; object-position:center 44%; }
+.about-chapter-copy { align-self:center; padding:clamp(4rem,8vw,9rem); }
+.about-chapter-copy p:last-child { max-width:30rem; }
+.about-transition { padding:clamp(7rem,14vw,14rem) clamp(1.25rem,8vw,9rem); display:grid; grid-template-columns:1.3fr .7fr; gap:clamp(3rem,8vw,10rem); align-items:end; color:white; background:var(--brand-ink); }
+.about-transition h2 { font-size:clamp(3.2rem,7vw,7rem); }
+.about-transition>p { max-width:29rem; margin:0; }
+.about-today header { max-width:58rem; margin-bottom:clamp(3rem,6vw,6rem); }
+.about-today header>p:last-child { max-width:38rem; font-size:clamp(1rem,1.5vw,1.2rem); }
+.about-photo-grid { display:grid; grid-template-columns:1.55fr .75fr; grid-template-rows:repeat(2,minmax(290px,34vw)); gap:1rem; }
+.about-photo-grid figure { position:relative; margin:0; overflow:hidden; }
+.about-photo-grid img { object-fit:cover; }
+.about-photo-main { grid-row:1 / 3; }
+.about-photo-main img { object-position:center; }
+.about-photo-grid figure:nth-child(2) img { object-position:center 58%; }
+.founder-section { display:grid; grid-template-columns:.7fr 1.3fr; min-height:85svh; background:var(--cream); }
+.founder-atmosphere { padding:clamp(3rem,7vw,7rem); display:flex; flex-direction:column; justify-content:center; gap:1.2rem; overflow:hidden; color:var(--brand-primary); border-right:1px solid var(--line); }
+.founder-atmosphere span { font-family:var(--font-title),Arial,sans-serif; font-size:clamp(3.5rem,7vw,7rem); line-height:.8; opacity:.75; }
+.founder-atmosphere span:nth-child(2) { margin-left:10%; opacity:.42; }
+.founder-atmosphere span:nth-child(3) { margin-left:-12%; opacity:.2; }
+.founder-section blockquote { align-self:center; max-width:55rem; margin:0; padding:clamp(4rem,9vw,10rem); }
+.founder-section blockquote h2 { margin:0 0 2rem; }
+.founder-section blockquote>p:not(.eyebrow) { max-width:44rem; font-size:clamp(1rem,1.6vw,1.2rem); }
+.founder-section blockquote footer { margin-top:3rem; padding-top:1.5rem; border-top:1px solid var(--line); }
+.founder-section blockquote footer strong,.founder-section blockquote footer span { display:block; }
+.founder-section blockquote footer strong { font-family:var(--font-subtitle),Arial,sans-serif; font-size:1.05rem; }
+.founder-section blockquote footer span { margin-top:.2rem; font-size:.78rem; text-transform:uppercase; letter-spacing:.12em; }
 .button.outline { background:transparent; color:var(--brand-primary); }
 .contact-social { display:block; margin-top:1rem; }
 .universe-hero { position:relative; min-height:calc(100svh - 92px); background:#333!important; overflow:hidden; }
@@ -129,4 +165,14 @@ h1,h2,h3 { letter-spacing:-.025em; }
   .instagram-grid { grid-template-columns:1fr 1fr; }
   .instagram-grid a { min-height:55vw; }
   .about-hero { min-height:68svh; }
+  .about-origin,.about-image-chapter,.about-transition,.founder-section { grid-template-columns:1fr; }
+  .about-origin { gap:1.5rem; }
+  .chapter-number { margin-bottom:0; }
+  .about-tall-image { min-height:65svh; }
+  .about-transition { align-items:start; }
+  .about-photo-grid { grid-template-columns:1fr; grid-template-rows:65svh 55svh 55svh; }
+  .about-photo-main { grid-row:auto; }
+  .founder-atmosphere { min-height:38svh; padding:3rem 1.25rem; border-right:0; border-bottom:1px solid var(--line); }
+  .founder-atmosphere span { font-size:clamp(3.5rem,18vw,6rem); }
+  .founder-section blockquote { padding:5rem 1.25rem; }
 }
