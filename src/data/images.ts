@@ -5,6 +5,9 @@ export const lanaiImages = {
   reception: "/images/lanai/Imagem 013_Original.jpeg",
   salon: "/images/lanai/IMG_8109.jpeg",
   spa: "/images/lanai/IMG_7184_jpg_Original.jpeg",
+  treatmentRoom: "/images/lanai/IMG_0803_Original.jpeg",
+  receptionWide: "/images/lanai/IMG_0824_Original.jpeg",
+  exterior: "/images/lanai/IMG_2994.jpeg",
 } as const;
 
 export const universeImages = {
@@ -12,4 +15,3 @@ export const universeImages = {
   estetica: lanaiImages.reception,
   spa: lanaiImages.spa,
 } as const;
-

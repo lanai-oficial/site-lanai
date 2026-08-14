@@ -29,12 +29,13 @@ for (const [filename, pathname] of pages) {
 }
 
 await page.setViewportSize({ width: 1440, height: 1000 });
-for (const [, pathname] of pages) {
-  await page.goto(`${baseUrl}${pathname}`, { waitUntil: "networkidle" });
+for (const [mobileFilename, pathname] of pages) {
+  await page.goto(`${baseUrl}${pathname}`, { waitUntil: "domcontentloaded" });
   assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth), true, `${pathname} possui rolagem horizontal no desktop`);
+  await page.screenshot({ path: new URL(mobileFilename.replace("-mobile", "-desktop"), output).pathname });
 }
 
-await page.goto(`${baseUrl}/servicos/cabelos`, { waitUntil: "networkidle" });
+await page.goto(`${baseUrl}/servicos/cabelos`, { waitUntil: "domcontentloaded" });
 const serviceWhatsApp = await page.locator("#conteudo").getByRole("link", { name: "Agende pelo WhatsApp" }).getAttribute("href");
 assert.match(decodeURIComponent(serviceWhatsApp ?? ""), /Cabelos/);
 assert.match(decodeURIComponent(serviceWhatsApp ?? ""), /\/servicos\/cabelos/);

@@ -90,6 +90,21 @@ h1,h2,h3 { letter-spacing:-.025em; }
 .home-about-copy { align-self:center; padding:clamp(4rem,8vw,9rem); }
 .home-about-copy h2 { font-size:clamp(2.8rem,5vw,5rem); }
 .statement { background:#555; }
+.instagram { padding:clamp(5rem,9vw,9rem) 0 0; text-align:center; }
+.instagram-heading { padding:0 1.25rem clamp(2.5rem,5vw,4rem); }
+.instagram-heading h2 { margin:0 auto 1.5rem; max-width:900px; }
+.instagram-grid { display:grid; grid-template-columns:repeat(4,1fr); }
+.instagram-grid a { position:relative; min-height:28vw; overflow:hidden; }
+.instagram-grid img { object-fit:cover; transition:transform .6s ease; }
+.instagram-grid a:nth-child(1) img { object-position:center 60%; }
+.instagram-grid a:nth-child(2) img { object-position:center 58%; }
+.instagram-grid a:hover img { transform:scale(1.035); }
+.about-hero { position:relative; min-height:72svh; padding:clamp(5rem,10vw,10rem) clamp(1.25rem,6vw,7rem); display:flex; align-items:flex-end; overflow:hidden; color:#fff; }
+.about-hero>img { object-fit:cover; object-position:center 42%; }
+.about-hero>div { position:relative; z-index:2; }
+.about-hero h1 { margin:0; }
+.button.outline { background:transparent; color:var(--brand-primary); }
+.contact-social { display:block; margin-top:1rem; }
 .universe-hero { position:relative; min-height:calc(100svh - 92px); background:#333!important; overflow:hidden; }
 .universe-hero>div { position:relative; z-index:2; }
 .universe-hero .image-shade { background:linear-gradient(0deg,rgba(0,0,0,.66),transparent 65%); }
@@ -111,4 +126,7 @@ h1,h2,h3 { letter-spacing:-.025em; }
   .home-about-copy { padding:4.5rem 1.25rem; }
   .universe-hero { min-height:72svh; }
   .detail-visual { min-height:60svh; }
+  .instagram-grid { grid-template-columns:1fr 1fr; }
+  .instagram-grid a { min-height:55vw; }
+  .about-hero { min-height:68svh; }
 }
