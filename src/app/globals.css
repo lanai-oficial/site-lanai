@@ -59,3 +59,56 @@ small { display:block; max-width:34rem; font-size:.72rem; line-height:1.5; opaci
 @media (max-width:800px) { .site-header { height:70px; padding:1.2rem; }.hero,.detail-page,.profile-hero { grid-template-columns:1fr; }.hero-shape { min-height:45svh; clip-path:ellipse(85% 95% at 45% 5%); }.hero-copy { padding:3rem 1.25rem 5rem; }.universe-grid,.category-grid { grid-template-columns:1fr; }.universe-card { min-height:360px; }.category-card { min-height:360px; }.professional-grid { grid-template-columns:1fr; }.portrait-placeholder { min-height:400px; }.portfolio-grid,.profile-services,.contact-grid,.site-footer,.universe-intro,.booking-band,.directory-group { grid-template-columns:1fr; }.site-footer small { grid-column:auto; }.detail-visual { min-height:45svh; }.section-heading { align-items:flex-start; flex-direction:column; }.service-row { grid-template-columns:2rem 1fr auto; padding:1.5rem .5rem; gap:1rem; }.service-row>div>p:last-child { display:none; }.category-directory>a { grid-template-columns:2rem 1fr auto; gap:1rem; }.directory-group { gap:2rem; }.universe-hero { min-height:60svh; } }
 @media (max-width:480px) { .category-grid { grid-template-columns:1fr; }.category-card { min-height:300px; }.section { padding-left:1.25rem; padding-right:1.25rem; } }
 @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { transition:none!important; } }
+
+/* Image-led Marvel reconstruction */
+:root { --paper:#fff; --cream:#f4f1ec; --ink:#454545; --line:rgba(69,69,69,.16); }
+body { background:#fff; }
+h1,h2,h3 { letter-spacing:-.025em; }
+.site-header { position:relative; z-index:20; height:92px; background:#fff; border:0; }
+.site-header nav { gap:clamp(.9rem,2vw,2rem); }
+.site-header .nav-cta { background:transparent; color:var(--brand-primary); border:1px solid var(--brand-primary); padding:.7rem 1rem; }
+.image-hero { position:relative; display:flex; min-height:calc(100svh - 92px); color:#fff; background:#333; }
+.image-hero>img,.universe-hero>img,.universe-card>img,.home-about-image>img,.detail-visual>img { object-fit:cover; }
+.image-hero>img { object-position:center 45%; }
+.image-shade,.card-shade { position:absolute; inset:0; background:linear-gradient(90deg,rgba(0,0,0,.62),rgba(0,0,0,.05) 72%); }
+.hero-copy { position:relative; z-index:2; align-self:center; padding:4rem clamp(1.5rem,7vw,7rem); max-width:46rem; }
+.hero-copy h1 { font-size:clamp(4.2rem,8.2vw,8.5rem); margin:.35rem 0 1.4rem; }
+.hero-copy>p:not(.eyebrow) { font-size:1.08rem; }
+.scroll-cue { position:absolute; z-index:2; bottom:2rem; right:clamp(1.5rem,4vw,4rem); font-size:.68rem; letter-spacing:.16em; text-transform:uppercase; }
+.intro { padding-top:clamp(6rem,11vw,11rem); padding-bottom:clamp(6rem,11vw,11rem); }
+.intro h2 { max-width:850px; margin:0 auto 2rem; }
+.universe-section>.section { padding-bottom:3rem; }
+.universe-grid { margin:0; }
+.universe-card { position:relative; min-height:72svh; padding:0; overflow:hidden; border-right:1px solid rgba(255,255,255,.45); }
+.universe-card>img { transition:transform .8s ease; }
+.universe-card:hover>img { transform:scale(1.035); }
+.card-shade { background:linear-gradient(0deg,rgba(0,0,0,.68),transparent 65%); }
+.card-copy { position:relative; z-index:2; padding:clamp(1.5rem,3vw,3rem); }
+.universe-card h3 { margin:.4rem 0 1rem; }
+.home-about { display:grid; grid-template-columns:1.25fr .75fr; max-width:none; padding:0; background:var(--cream); }
+.home-about-image { position:relative; min-height:720px; }
+.home-about-copy { align-self:center; padding:clamp(4rem,8vw,9rem); }
+.home-about-copy h2 { font-size:clamp(2.8rem,5vw,5rem); }
+.statement { background:#555; }
+.universe-hero { position:relative; min-height:calc(100svh - 92px); background:#333!important; overflow:hidden; }
+.universe-hero>div { position:relative; z-index:2; }
+.universe-hero .image-shade { background:linear-gradient(0deg,rgba(0,0,0,.66),transparent 65%); }
+.universe-hero h1 { font-size:clamp(4.5rem,10vw,9rem); }
+.detail-visual { position:relative; background:#ddd; }
+.detail-page article h1 { font-size:clamp(3.5rem,7vw,7rem); }
+.button { background:var(--brand-primary); border-color:var(--brand-primary); }
+@media (max-width:800px) {
+  .site-header { height:72px; }
+  .image-hero { min-height:calc(100svh - 72px); }
+  .image-hero>img { object-position:58% center; }
+  .hero-copy { align-self:flex-end; padding:4rem 1.25rem 6rem; }
+  .hero-copy h1 { font-size:clamp(3.8rem,18vw,5.4rem); }
+  .image-shade { background:linear-gradient(0deg,rgba(0,0,0,.72),rgba(0,0,0,.03) 78%); }
+  .scroll-cue { display:none; }
+  .universe-card { min-height:64svh; }
+  .home-about { grid-template-columns:1fr; }
+  .home-about-image { min-height:58svh; }
+  .home-about-copy { padding:4.5rem 1.25rem; }
+  .universe-hero { min-height:72svh; }
+  .detail-visual { min-height:60svh; }
+}
