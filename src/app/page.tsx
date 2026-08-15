@@ -33,7 +33,7 @@ function Icon({ name }: { name: "instagram" | "location" | "chat" | "calendar" |
 }
 
 function HomeHeader() {
-  const links = <>{navigation.map(([label, href]) => <Link href={href} key={href}>{label}</Link>)}<WhatsAppLink origin="home_navigation">Agende agora</WhatsAppLink></>;
+  const links = <>{navigation.map(([label, href]) => <Link href={href} key={href}>{label}</Link>)}<WhatsAppLink className="home-nav-link" origin="home_navigation">Agende agora</WhatsAppLink></>;
   return <header className="home-header">
     <div className="home-topline" />
     <div className="home-header-main">
@@ -60,19 +60,20 @@ export default function Home() {
       </section>)}
     </div>
     <section className="home-experience" aria-labelledby="experience-title">
-      <header><p>Descubra</p><h2 id="experience-title">A Experiência Lanai</h2></header>
+      <header><h2 id="experience-title">A Experiência Lanai</h2></header>
       <div className="home-experience-grid">
-        <article><Icon name="chat" /><h3>Fale com o especialista</h3><p>Converse com a recepção e encontre o cuidado ideal para você.</p><WhatsAppLink origin="home_experience_specialist">Falar agora</WhatsAppLink></article>
-        <article><Icon name="calendar" /><h3>Agende seu atendimento</h3><p>Escolha o melhor momento para viver a sua experiência Lanai.</p><WhatsAppLink origin="home_experience_booking">Agendar agora</WhatsAppLink></article>
-        <article><Icon name="spark" /><h3>Lanai Day</h3><p>Reserve um tempo para beleza, cuidado e bem-estar.</p><WhatsAppLink origin="home_experience_lanai_day">Quero conhecer</WhatsAppLink></article>
+        <article><Icon name="chat" /><h3>Fale com o especialista</h3><p>Converse com a recepção e encontre o cuidado ideal para você.</p><WhatsAppLink className="home-text-link" origin="home_experience_specialist">Saiba mais &gt;</WhatsAppLink></article>
+        <article><Icon name="calendar" /><h3>Agende seu atendimento</h3><p>Escolha o melhor momento para viver a sua experiência Lanai.</p><WhatsAppLink className="home-text-link" origin="home_experience_booking">Agendar agora &gt;</WhatsAppLink></article>
+        <article><Icon name="spark" /><h3>Lanai Day</h3><p>Reserve um tempo para beleza, cuidado e bem-estar.</p><WhatsAppLink className="home-text-link" origin="home_experience_lanai_day">Agendar agora &gt;</WhatsAppLink></article>
       </div>
     </section>
     <footer className="home-footer">
       <div className="home-footer-grid">
         <div className="home-footer-brand"><Image src={lanaiLogoBranco} alt="Lanai" /><p>Beleza, cuidado e presença.</p></div>
         <nav aria-label="Navegação do rodapé"><h2>Institucional</h2><Link href="/sobre">Sobre a Lanai</Link><Link href="/servicos">Serviços</Link><Link href="/contato">Contato</Link></nav>
-        <div><h2>Horários</h2><p>Consulte a recepção.</p><h2 className="home-footer-subtitle">Localização</h2><p>Downtown<br />Barra da Tijuca</p></div>
-        <div><h2>Contato</h2><WhatsAppLink origin="home_footer">Agende pelo WhatsApp</WhatsAppLink><a href={OFFICIAL_LINKS.maps} target="_blank" rel="noreferrer">Como chegar</a><h2 className="home-footer-subtitle">Siga a Lanai</h2><a href={OFFICIAL_LINKS.instagram} target="_blank" rel="noreferrer">Instagram</a></div>
+        <div><h2>Horários de atendimento</h2><p>Terça-feira a sábado<br />das 9h às 20h.</p><h2 className="home-footer-subtitle">Localização</h2><p>Downtown<br />Barra da Tijuca</p></div>
+        <div><h2>Entrar em contato</h2><WhatsAppLink className="home-text-link" origin="home_footer">Agende pelo WhatsApp</WhatsAppLink><a href={OFFICIAL_LINKS.maps} target="_blank" rel="noreferrer">Como chegar</a></div>
+        <div><h2>Últimas novidades Lanai</h2><p>Acompanhe nossos cuidados e novidades.</p><a href={OFFICIAL_LINKS.instagram} target="_blank" rel="noreferrer">Instagram &gt;</a></div>
       </div>
       <small>© {new Date().getFullYear()} Lanai. Todos os direitos reservados.</small>
       <div className="home-footer-line" />
