@@ -29,7 +29,7 @@ export default function AboutPage() {
 
       <section className="about-transition">
         <div><p className="eyebrow">2020 · Um novo endereço</p><h2>O endereço mudou.<br />O conceito permaneceu.</h2></div>
-        <p>Em 2020, o fim de um ciclo no Centro abriu caminho para a chegada ao Shopping Downtown, em 15 de dezembro. A Barra da Tijuca já estava nos planos; a mudança levou a mesma visão a um espaço novo.</p>
+        <p>Em 2020, o fim de um ciclo no Centro abriu caminho para a chegada ao Downtown, em 15 de dezembro. A Barra da Tijuca já estava nos planos; a mudança levou a mesma visão a um espaço novo.</p>
       </section>
 
       <section className="about-today section">
