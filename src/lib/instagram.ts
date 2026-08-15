@@ -11,7 +11,9 @@ const INSTAGRAM_FIELDS = [
   "timestamp",
 ].join(",");
 
-export const INSTAGRAM_REVALIDATE_SECONDS = 30 * 60;
+// A short shared cache keeps the Home close to the live profile while still
+// limiting the Meta request to at most one every five minutes per deployment.
+export const INSTAGRAM_REVALIDATE_SECONDS = 5 * 60;
 
 export type InstagramPost = {
   id: string;
@@ -63,10 +65,9 @@ async function requestInstagramPosts(): Promise<InstagramPost[]> {
 }
 
 // Only successful responses are retained, so a temporary Meta failure can recover
-// immediately while normal traffic shares one response for thirty minutes.
+// immediately while normal traffic shares one response for five minutes.
 export const getInstagramPosts = unstable_cache(
   requestInstagramPosts,
   ["lanai-instagram-feed"],
   { revalidate: INSTAGRAM_REVALIDATE_SECONDS, tags: ["instagram-feed"] },
 );
-
