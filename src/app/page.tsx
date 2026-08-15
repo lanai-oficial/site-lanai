@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { WhatsAppLink } from "@/components/whatsapp-link";
+import { SiteSearch } from "@/components/site-search";
 import { homeImages, lanaiImages } from "@/data/images";
 import { OFFICIAL_LINKS } from "@/lib/contact";
 import lanaiLogoAzul from "../../LANAI_LOGO_AZUL_0521.png";
@@ -10,7 +11,6 @@ const navigation = [
   ["Salão de Beleza", "/salao-de-beleza"],
   ["Estética", "/estetica"],
   ["Spa", "/spa"],
-  ["Terapia Capilar", "/servicos/cabelos"],
   ["Sobre a Lanai", "/sobre"],
 ] as const;
 
@@ -18,7 +18,6 @@ const banners = [
   { title: "Lanai", href: "/sobre", image: homeImages.hero, position: "center 48%", alt: "Fachada da Lanai no Downtown" },
   { title: "Serviços de Estética", href: "/estetica", image: lanaiImages.treatmentRoom, position: "center 58%", alt: "Sala de tratamentos da Lanai" },
   { title: "Salão de Beleza", href: "/salao-de-beleza", image: lanaiImages.salon, position: "center 60%", alt: "Salão de beleza da Lanai" },
-  { title: "Terapia Capilar", href: "/servicos/cabelos", image: lanaiImages.receptionWide, position: "center 48%", alt: "Ambiente interno da Lanai" },
 ] as const;
 
 function Icon({ name }: { name: "instagram" | "location" | "chat" | "calendar" | "spark" }) {
@@ -37,13 +36,14 @@ function HomeHeader() {
   return <header className="home-header">
     <div className="home-topline" />
     <div className="home-header-main">
-      <span className="home-header-spacer" />
+      <details className="home-mobile-menu"><summary>Menu</summary><nav aria-label="Navegação principal para celular">{links}</nav></details>
       <Link className="home-logo" href="/" aria-label="Lanai — página inicial"><Image src={lanaiLogoAzul} alt="Lanai" priority /></Link>
       <div className="home-header-icons">
         <a href={OFFICIAL_LINKS.instagram} target="_blank" rel="noreferrer" aria-label="Instagram da Lanai"><Icon name="instagram" /></a>
         <a href={OFFICIAL_LINKS.maps} target="_blank" rel="noreferrer" aria-label="Como chegar à Lanai"><Icon name="location" /></a>
+        <SiteSearch home />
       </div>
-      <details className="home-mobile-menu"><summary>Menu</summary><nav aria-label="Navegação principal para celular">{links}</nav></details>
+      <div className="home-mobile-search"><SiteSearch home /></div>
     </div>
     <nav className="home-desktop-nav" aria-label="Navegação principal">{links}</nav>
   </header>;

@@ -6,6 +6,7 @@ export type ServiceCategory = {
   eyebrow: string;
   description: string;
   universe: UniverseSlug;
+  aliases: string[];
 };
 
 export type ServiceUniverse = {
@@ -41,13 +42,13 @@ export const serviceUniverses: ServiceUniverse[] = [
 ];
 
 export const serviceCategories: ServiceCategory[] = [
-  { slug: "cabelos", name: "Cabelos", eyebrow: "Forma & expressão", description: "Conheça os cuidados disponíveis para cabelos.", universe: "salao-de-beleza" },
-  { slug: "unhas", name: "Unhas", eyebrow: "Detalhes", description: "Conheça os cuidados disponíveis para mãos e pés.", universe: "salao-de-beleza" },
-  { slug: "sobrancelhas", name: "Sobrancelhas", eyebrow: "Traço & equilíbrio", description: "Conheça os serviços disponíveis para sobrancelhas.", universe: "salao-de-beleza" },
-  { slug: "depilacao", name: "Depilação", eyebrow: "Cuidado", description: "Conheça as opções de depilação disponíveis.", universe: "estetica" },
-  { slug: "estetica-facial", name: "Estética Facial", eyebrow: "Rosto", description: "Conheça os cuidados disponíveis em estética facial.", universe: "estetica" },
-  { slug: "estetica-corporal", name: "Estética Corporal", eyebrow: "Corpo", description: "Conheça os cuidados disponíveis em estética corporal.", universe: "estetica" },
-  { slug: "spa", name: "Experiências de Spa", eyebrow: "Bem-estar", description: "Conheça as experiências disponíveis no Spa.", universe: "spa" },
+  { slug: "cabelos", name: "Cabelos", eyebrow: "Forma & expressão", description: "Conheça os cuidados disponíveis para cabelos.", universe: "salao-de-beleza", aliases: ["luzes", "morena iluminada", "mechas", "corte", "escova", "cor", "coloracao", "penteado"] },
+  { slug: "unhas", name: "Unhas", eyebrow: "Detalhes", description: "Conheça os cuidados disponíveis para mãos e pés.", universe: "salao-de-beleza", aliases: ["unha", "manicure", "pedicure", "maos", "pes"] },
+  { slug: "sobrancelhas", name: "Sobrancelhas", eyebrow: "Traço & equilíbrio", description: "Conheça os serviços disponíveis para sobrancelhas.", universe: "salao-de-beleza", aliases: ["sobrancelha", "design", "olhar"] },
+  { slug: "depilacao", name: "Depilação", eyebrow: "Cuidado", description: "Conheça as opções de depilação disponíveis.", universe: "estetica", aliases: ["depilar", "pelos", "cera"] },
+  { slug: "estetica-facial", name: "Estética Facial", eyebrow: "Rosto", description: "Conheça os cuidados disponíveis em estética facial.", universe: "estetica", aliases: ["pele", "rosto", "limpeza de pele", "botox", "facial"] },
+  { slug: "estetica-corporal", name: "Estética Corporal", eyebrow: "Corpo", description: "Conheça os cuidados disponíveis em estética corporal.", universe: "estetica", aliases: ["corpo", "modeladora", "drenagem", "celulite"] },
+  { slug: "spa", name: "Experiências de Spa", eyebrow: "Bem-estar", description: "Conheça as experiências disponíveis no Spa.", universe: "spa", aliases: ["massagem", "relaxar", "relaxamento", "bem estar", "day spa"] },
 ];
 
 export function getServiceCategory(slug: string) {
