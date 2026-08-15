@@ -56,7 +56,10 @@ export default function Home() {
       {banners.map((banner, index) => <section className="home-banner" key={banner.title}>
         <Image src={banner.image} alt={banner.alt} fill priority={index === 0} unoptimized sizes="100vw" style={{ objectPosition: banner.position }} />
         <div className="home-banner-shade" />
-        <div className="home-banner-copy"><h1>{banner.title}</h1><Link href={banner.href}>Saiba mais</Link></div>
+        <div className="home-banner-copy">
+          {index === 0 ? <h1>{banner.title}</h1> : <h2>{banner.title}</h2>}
+          <Link href={banner.href}>Saiba mais</Link>
+        </div>
       </section>)}
     </div>
     <section className="home-experience" aria-labelledby="experience-title">
@@ -69,7 +72,7 @@ export default function Home() {
     </section>
     <footer className="home-footer">
       <div className="home-footer-grid">
-        <div className="home-footer-brand"><Image src={lanaiLogoBranco} alt="Lanai" /><p>Beleza, cuidado e presença.</p></div>
+        <div className="home-footer-brand"><Link href="/" aria-label="Lanai — página inicial"><Image src={lanaiLogoBranco} alt="Lanai" /></Link><p>Beleza, cuidado e presença.</p></div>
         <nav aria-label="Navegação do rodapé"><h2>Institucional</h2><Link href="/sobre">Sobre a Lanai</Link><Link href="/servicos">Serviços</Link><Link href="/contato">Contato</Link></nav>
         <div><h2>Horários de atendimento</h2><p>Terça-feira a sábado<br />das 9h às 20h.</p><h2 className="home-footer-subtitle">Localização</h2><p>Downtown<br />Barra da Tijuca</p></div>
         <div><h2>Entrar em contato</h2><WhatsAppLink className="home-text-link" origin="home_footer">Agende pelo WhatsApp</WhatsAppLink><a href={OFFICIAL_LINKS.maps} target="_blank" rel="noreferrer">Como chegar</a></div>
