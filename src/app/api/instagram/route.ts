@@ -12,7 +12,7 @@ export async function GET() {
       { posts },
       {
         headers: {
-          "Cache-Control": `public, s-maxage=${INSTAGRAM_REVALIDATE_SECONDS}, stale-while-revalidate=86400`,
+          "Cache-Control": `public, s-maxage=${INSTAGRAM_REVALIDATE_SECONDS}, stale-while-revalidate=60`,
         },
       },
     );
@@ -23,4 +23,3 @@ export async function GET() {
     );
   }
 }
-
