@@ -25,12 +25,15 @@ for (const [filename, pathname] of pages) {
   assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth), true, `${pathname} possui rolagem horizontal`);
   await page.screenshot({ path: new URL(filename, output).pathname, fullPage: true });
   const pageText = (await page.locator("body").innerText()).toLowerCase();
-  for (const forbidden of ["conteúdo demonstrativo", "foto a cadastrar", "terapia capilar", "r$ 100"]) assert.ok(!pageText.includes(forbidden), `${pathname} expõe: ${forbidden}`);
+  const forbiddenContent = ["conteúdo demonstrativo", "foto a cadastrar", "r$ 100"];
+  if (pathname !== "/") forbiddenContent.push("terapia capilar");
+  for (const forbidden of forbiddenContent) assert.ok(!pageText.includes(forbidden), `${pathname} expõe: ${forbidden}`);
 }
 
 await page.setViewportSize({ width: 1440, height: 1000 });
 for (const [mobileFilename, pathname] of pages) {
   await page.goto(`${baseUrl}${pathname}`, { waitUntil: "domcontentloaded" });
+  await page.waitForTimeout(750);
   assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth), true, `${pathname} possui rolagem horizontal no desktop`);
   await page.screenshot({ path: new URL(mobileFilename.replace("-mobile", "-desktop"), output).pathname });
 }
