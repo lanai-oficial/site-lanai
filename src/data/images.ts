@@ -15,3 +15,13 @@ export const universeImages = {
   estetica: lanaiImages.reception,
   spa: lanaiImages.spa,
 } as const;
+
+export const homeImages = {
+  hero: lanaiImages.facadeWide,
+  services: lanaiImages.receptionWide,
+  universes: {
+    "salao-de-beleza": lanaiImages.salon,
+    estetica: lanaiImages.facade,
+    spa: lanaiImages.spa,
+  },
+} as const;
