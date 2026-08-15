@@ -1,3 +1,6 @@
+import firstLanai from "../../docs/IMG_7920_Original.jpeg";
+import founderCelina from "../../docs/IMG_1556.jpeg";
+
 export const lanaiImages = {
   facade: "/images/lanai/50dc553e-35bc-452b-bbb9-1946f71b8118_Original.jpeg",
   facadeWide: "/images/lanai/Facetune_03-01-2024-13-11-53_Original.jpeg",
@@ -8,6 +11,8 @@ export const lanaiImages = {
   treatmentRoom: "/images/lanai/IMG_0803_Original.jpeg",
   receptionWide: "/images/lanai/IMG_0824_Original.jpeg",
   exterior: "/images/lanai/IMG_2994.jpeg",
+  firstLanai,
+  founderCelina,
 } as const;
 
 export const universeImages = {

@@ -92,7 +92,7 @@ h1,h2,h3 { letter-spacing:-.025em; }
 .statement { background:#555; }
 .instagram { padding:clamp(5rem,9vw,9rem) 0 0; text-align:center; }
 .instagram-heading { padding:0 1.25rem clamp(2.5rem,5vw,4rem); }
-.instagram-heading h2 { margin:0 auto 1.5rem; max-width:900px; }
+.instagram-heading h2 { margin:0 auto; max-width:900px; }
 .instagram-grid { display:grid; grid-template-columns:repeat(4,1fr); }
 .instagram-grid a { position:relative; min-height:28vw; overflow:hidden; }
 .instagram-grid img { object-fit:cover; transition:transform .6s ease; }
@@ -128,10 +128,8 @@ h1,h2,h3 { letter-spacing:-.025em; }
 .about-photo-main img { object-position:center; }
 .about-photo-grid figure:nth-child(2) img { object-position:center 58%; }
 .founder-section { display:grid; grid-template-columns:.7fr 1.3fr; min-height:85svh; background:var(--cream); }
-.founder-atmosphere { padding:clamp(3rem,7vw,7rem); display:flex; flex-direction:column; justify-content:center; gap:1.2rem; overflow:hidden; color:var(--brand-primary); border-right:1px solid var(--line); }
-.founder-atmosphere span { font-family:var(--font-title),Arial,sans-serif; font-size:clamp(3.5rem,7vw,7rem); line-height:.8; opacity:.75; }
-.founder-atmosphere span:nth-child(2) { margin-left:10%; opacity:.42; }
-.founder-atmosphere span:nth-child(3) { margin-left:-12%; opacity:.2; }
+.founder-portrait { position:relative; min-height:85svh; overflow:hidden; border-right:1px solid var(--line); }
+.founder-portrait img { object-fit:cover; object-position:center 38%; }
 .founder-section blockquote { align-self:center; max-width:55rem; margin:0; padding:clamp(4rem,9vw,10rem); }
 .founder-section blockquote h2 { margin:0 0 2rem; }
 .founder-section blockquote>p:not(.eyebrow) { max-width:44rem; font-size:clamp(1rem,1.6vw,1.2rem); }
@@ -172,7 +170,6 @@ h1,h2,h3 { letter-spacing:-.025em; }
   .about-transition { align-items:start; }
   .about-photo-grid { grid-template-columns:1fr; grid-template-rows:65svh 55svh 55svh; }
   .about-photo-main { grid-row:auto; }
-  .founder-atmosphere { min-height:38svh; padding:3rem 1.25rem; border-right:0; border-bottom:1px solid var(--line); }
-  .founder-atmosphere span { font-size:clamp(3.5rem,18vw,6rem); }
+  .founder-portrait { min-height:65svh; border-right:0; border-bottom:1px solid var(--line); }
   .founder-section blockquote { padding:5rem 1.25rem; }
 }

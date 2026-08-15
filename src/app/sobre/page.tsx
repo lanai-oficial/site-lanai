@@ -19,21 +19,21 @@ export default function AboutPage() {
       <section className="about-origin section">
         <p className="chapter-number" aria-hidden="true">01</p>
         <div><p className="eyebrow">A origem</p><h2>Lanai começou com uma ideia de pausa.</h2></div>
-        <p className="about-lead">No meio da correria do Rio, criar uma ilha: um lugar para relaxar, desconectar do lado de fora e se reconectar com o agora. A imagem deu nome à Lanai — e direção a tudo o que viria depois.</p>
+        <p className="about-lead">A inspiração veio de Lanai, ilha do Havaí, e se tornou uma ideia muito nossa: criar, no meio da correria do Rio, uma ilha-refúgio para relaxar, desconectar do lado de fora e se reconectar com o agora.</p>
       </section>
 
       <section className="about-image-chapter">
-        <div className="about-tall-image"><Image src={lanaiImages.exterior} alt="Entrada da Lanai no Shopping Downtown" fill sizes="(max-width: 800px) 100vw, 55vw" /></div>
-        <div className="about-chapter-copy"><p className="eyebrow">O começo</p><h2>O conceito veio antes do endereço atual.</h2><p>A primeira Lanai nasceu no Centro do Rio, entre a Avenida Rio Branco e a Rua das Flores. Bastava subir dois lances de escada para deixar a cidade lá fora — e entrar em um ambiente pensado, desde o início, como um momento de descompressão.</p></div>
+        <div className="about-tall-image"><Image src={lanaiImages.firstLanai} alt="A primeira Lanai, no Centro do Rio" fill sizes="(max-width: 800px) 100vw, 55vw" /></div>
+        <div className="about-chapter-copy"><p className="eyebrow">2017 · O começo</p><h2>O conceito veio antes do endereço atual.</h2><p>A primeira Lanai nasceu em 2017, no Centro do Rio, entre a Avenida Rio Branco e a Rua das Flores. Subir dois lances de escada era uma passagem: a pressa do Centro ficava do lado de fora e começava um momento de descompressão.</p><p>Não havia relógios nem televisão convencional, propositalmente. Referências ao mar, música, sons da natureza e plantas naturais compunham uma experiência sensorial feita para devolver cada pessoa ao presente.</p></div>
       </section>
 
       <section className="about-transition">
         <div><p className="eyebrow">2020 · Um novo endereço</p><h2>O endereço mudou.<br />O conceito permaneceu.</h2></div>
-        <p>O fim de um ciclo no Centro abriu caminho para a chegada ao Shopping Downtown, em 15 de dezembro. A Barra já estava nos planos; a mudança levou a mesma visão a um espaço novo.</p>
+        <p>Em 2020, o fim de um ciclo no Centro abriu caminho para a chegada ao Shopping Downtown, em 15 de dezembro. A Barra da Tijuca já estava nos planos; a mudança levou a mesma visão a um espaço novo.</p>
       </section>
 
       <section className="about-today section">
-        <header><p className="eyebrow">A Lanai hoje</p><h2>A pausa ganhou espaço.</h2><p>A visão inicial vive hoje em um ambiente que reúne beleza, estética e spa. Plantas, luz, música e uma atmosfera acolhedora não são cenário: fazem parte da experiência.</p></header>
+        <header><p className="eyebrow">A Lanai hoje</p><h2>A pausa ganhou espaço.</h2><p>O conceito da primeira Lanai continua vivo no ambiente atual, que reúne beleza, estética e spa. Plantas naturais, luz, música e uma atmosfera acolhedora não são cenário: fazem parte da experiência.</p></header>
         <div className="about-photo-grid">
           <figure className="about-photo-main"><Image src={lanaiImages.reception} alt="Ambiente atual da Lanai com plantas e mobiliário em madeira" fill sizes="(max-width: 800px) 100vw, 60vw" /></figure>
           <figure><Image src={lanaiImages.spa} alt="Sala de spa da Lanai preparada para um momento de cuidado" fill sizes="(max-width: 800px) 100vw, 35vw" /></figure>
@@ -42,7 +42,7 @@ export default function AboutPage() {
       </section>
 
       <section className="founder-section">
-        <div className="founder-atmosphere" aria-hidden="true"><span>pausa</span><span>acolhimento</span><span>presença</span></div>
+        <div className="founder-portrait"><Image src={lanaiImages.founderCelina} alt="Celina Mailu Cassariego, fundadora da Lanai" fill sizes="(max-width: 800px) 100vw, 35vw" /></div>
         <blockquote>
           <p className="eyebrow">A visão da fundadora</p>
           <h2>“Eu nunca fui fã de salão.”</h2>
