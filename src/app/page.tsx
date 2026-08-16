@@ -1,18 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { WhatsAppLink } from "@/components/whatsapp-link";
-import { SiteSearch } from "@/components/site-search";
 import { homeImages, lanaiImages } from "@/data/images";
-import { OFFICIAL_LINKS } from "@/lib/contact";
-import lanaiLogoAzul from "../../LANAI_LOGO_AZUL_0521.png";
-import lanaiLogoBranco from "../../LANAI_LOGO_BRANCO_0521.png";
+import { EventView } from "@/components/event-view";
 
-const navigation = [
-  ["Salão de Beleza", "/salao-de-beleza"],
-  ["Estética", "/estetica"],
-  ["Spa", "/spa"],
-  ["Sobre a Lanai", "/sobre"],
-] as const;
 
 const banners = [
   { title: "Lanai", href: "/sobre", image: homeImages.hero, position: "center 48%", alt: "Fachada da Lanai no Downtown" },
@@ -31,27 +22,9 @@ function Icon({ name }: { name: "instagram" | "location" | "chat" | "calendar" |
   return <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">{paths[name]}</svg>;
 }
 
-function HomeHeader() {
-  const links = <>{navigation.map(([label, href]) => <Link href={href} key={href}>{label}</Link>)}<WhatsAppLink className="home-nav-link" origin="home_navigation">Agende agora</WhatsAppLink></>;
-  return <header className="home-header">
-    <div className="home-topline" />
-    <div className="home-header-main">
-      <details className="home-mobile-menu"><summary>Menu</summary><nav aria-label="Navegação principal para celular">{links}</nav></details>
-      <Link className="home-logo" href="/" aria-label="Lanai — página inicial"><Image src={lanaiLogoAzul} alt="Lanai" priority /></Link>
-      <div className="home-header-icons">
-        <a href={OFFICIAL_LINKS.instagram} target="_blank" rel="noreferrer" aria-label="Instagram da Lanai"><Icon name="instagram" /></a>
-        <a href={OFFICIAL_LINKS.maps} target="_blank" rel="noreferrer" aria-label="Como chegar à Lanai"><Icon name="location" /></a>
-        <SiteSearch home />
-      </div>
-      <div className="home-mobile-search"><SiteSearch home /></div>
-    </div>
-    <nav className="home-desktop-nav" aria-label="Navegação principal">{links}</nav>
-  </header>;
-}
-
 export default function Home() {
   return <div className="home-page">
-    <HomeHeader />
+    <EventView event="view_home" id="home" />
     <div className="home-banners">
       {banners.map((banner, index) => <section className="home-banner" key={banner.title}>
         <Image src={banner.image} alt={banner.alt} fill priority={index === 0} unoptimized sizes="100vw" style={{ objectPosition: banner.position }} />
@@ -70,16 +43,5 @@ export default function Home() {
         <article><Icon name="spark" /><h3>Lanai Day</h3><p>Reserve um tempo para beleza, cuidado e bem-estar.</p><WhatsAppLink className="home-text-link" origin="home_experience_lanai_day">Agendar agora &gt;</WhatsAppLink></article>
       </div>
     </section>
-    <footer className="home-footer">
-      <div className="home-footer-grid">
-        <div className="home-footer-brand"><Link href="/" aria-label="Lanai — página inicial"><Image src={lanaiLogoBranco} alt="Lanai" /></Link><p>Beleza, cuidado e presença.</p></div>
-        <nav aria-label="Navegação do rodapé"><h2>Institucional</h2><Link href="/sobre">Sobre a Lanai</Link><Link href="/servicos">Serviços</Link><Link href="/contato">Contato</Link></nav>
-        <div><h2>Horários de atendimento</h2><p>Terça-feira a sábado<br />das 9h às 20h.</p><h2 className="home-footer-subtitle">Localização</h2><p>Downtown<br />Barra da Tijuca</p></div>
-        <div><h2>Entrar em contato</h2><WhatsAppLink className="home-text-link" origin="home_footer">Agende pelo WhatsApp</WhatsAppLink><a href={OFFICIAL_LINKS.maps} target="_blank" rel="noreferrer">Como chegar</a></div>
-        <div><h2>Últimas novidades Lanai</h2><p>Acompanhe nossos cuidados e novidades.</p><a href={OFFICIAL_LINKS.instagram} target="_blank" rel="noreferrer">Instagram &gt;</a></div>
-      </div>
-      <small>© {new Date().getFullYear()} Lanai. Todos os direitos reservados.</small>
-      <div className="home-footer-line" />
-    </footer>
   </div>;
 }

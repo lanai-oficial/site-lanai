@@ -2,30 +2,26 @@
 
 import Link from "next/link";
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
-import { serviceCategories, serviceUniverses } from "@/data/services";
+import servicesCatalog from "@/data/lanai_33_servicos_v1_producao.json";
 import { rememberSearchAttribution, trackEvent } from "@/lib/analytics";
 
 function normalize(value: string) {
   return value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("pt-BR").replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
 }
 
-const searchableServices = serviceCategories.map((service) => ({
-  id: service.slug,
-  href: `/servicos/${service.slug}`,
+const searchableServices = servicesCatalog.categorias.flatMap((category) => category.servicos.map((service) => ({
+  id: service.id,
+  href: `/servicos/${service.id}`,
   type: "Serviço",
-  name: service.name,
-  description: service.description,
-  category: serviceUniverses.find(({ slug }) => slug === service.universe)?.name ?? "Serviços",
-  searchText: normalize([service.name, service.description, service.eyebrow, ...service.aliases].join(" ")),
-})).concat([{
-  id: "noivas-e-eventos",
-  href: "/noivas-e-eventos",
-  type: "Experiência",
-  name: "Noivas e Eventos",
-  description: "Conheça a experiência Lanai para noivas e ocasiões especiais.",
-  category: "Salão de Beleza",
-  searchText: normalize("noiva noivas casamento evento eventos festa dia da noiva penteado maquiagem"),
-}]);
+  name: service.nome,
+  description: service.tier1.frase_curta,
+  category: category.nome,
+  categoryId: category.id,
+  searchText: normalize([service.nome, service.tier1.frase_curta, service.tier2.gancho, service.tier2.descricao, category.nome,
+    category.id === "hair-spa" ? "cabelo cabelos mecha mechas" : "",
+    category.id === "manicure" || category.id === "nail-design" ? "unha unhas" : "",
+  ].join(" ")),
+})));
 
 export function SiteSearch({ home = false }: { home?: boolean }) {
   const [open, setOpen] = useState(false);
@@ -54,19 +50,19 @@ export function SiteSearch({ home = false }: { home?: boolean }) {
     if (!cleanQuery) return;
     setSubmittedQuery(query.trim());
     const matches = searchableServices.filter(({ searchText }) => cleanQuery.split(" ").every((word) => searchText.includes(word)));
-    trackEvent("search_submit", { search_term: cleanQuery, results_count: matches.length });
+    trackEvent("search_submit", { query: cleanQuery, search_term: cleanQuery, results_count: matches.length });
     if (!matches.length) trackEvent("search_no_results", { search_term: cleanQuery });
   }
 
-  function selectResult(id: string, category: string) {
+  function selectResult(id: string, category: string, categoryId: string, position: number) {
     const search = { search_term: normalizedQuery, result_id: id, category };
     rememberSearchAttribution(search);
-    trackEvent("search_result_click", { search_term: normalizedQuery, result_id: id, category, destination: "service_detail" });
+    trackEvent("search_result_click", { query: normalizedQuery, search_term: normalizedQuery, service_id: id, result_id: id, category_id: categoryId, category, position, destination: "service_detail" });
     setOpen(false);
   }
 
   return <>
-    <button className={home ? "home-search-trigger" : "search-trigger"} type="button" aria-label="Abrir busca" aria-expanded={open} onClick={() => { setOpen(true); trackEvent("search_open"); }}>
+    <button className={home ? "home-search-trigger" : "search-trigger"} type="button" aria-label="Abrir busca" aria-expanded={open} onClick={() => { setOpen(true); trackEvent("search_open", { page: window.location.pathname }); }}>
       <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
     </button>
     {open && <div className="search-overlay" role="dialog" aria-modal="true" aria-labelledby="search-title">
@@ -81,9 +77,9 @@ export function SiteSearch({ home = false }: { home?: boolean }) {
         {submittedQuery && <div className="search-results" aria-live="polite">
           <p className="search-summary">{results.length ? `${results.length} ${results.length === 1 ? "resultado" : "resultados"} para “${submittedQuery}”` : `Nenhum resultado para “${submittedQuery}”`}</p>
           {!results.length && <p className="search-empty">Não encontrou o que imaginava? Fale com a recepção — sua pesquisa também nos ajuda a entender novos interesses.</p>}
-          {results.map((result) => <article className="search-result" key={result.id}>
+          {results.map((result, index) => <article className="search-result" key={result.id}>
             <div><span>{result.type} · {result.category}</span><h3>{result.name}</h3><p>{result.description}</p></div>
-            <Link href={result.href} onClick={() => selectResult(result.id, result.category)}>Conhecer <span aria-hidden="true">→</span></Link>
+            <Link href={result.href} onClick={() => selectResult(result.id, result.category, result.categoryId, index + 1)}>Conhecer <span aria-hidden="true">→</span></Link>
           </article>)}
         </div>}
       </div>

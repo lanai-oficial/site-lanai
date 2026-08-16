@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { lanaiImages } from "@/data/images";
+import { EventView } from "@/components/event-view";
 
 export const metadata: Metadata = {
   title: "Sobre a Lanai",
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return <>
+    <EventView event="view_about" id="about" />
     <section className="about-hero">
       <Image src={lanaiImages.receptionWide} alt="Recepção da Lanai, cercada por plantas e luz natural" fill priority sizes="100vw" />
       <span className="image-shade" />

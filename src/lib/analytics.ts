@@ -1,5 +1,10 @@
 export const browserEventNames = [
   "page_view",
+  "view_home",
+  "view_about",
+  "category_view",
+  "view_category_page",
+  "click_service_card",
   "service_view",
   "professional_profile_view",
   "portfolio_view",
@@ -25,11 +30,31 @@ declare global {
   interface Window { dataLayer?: Array<Record<string, unknown>> }
 }
 
-/** Camada neutra: não envia dados enquanto um provedor real não for configurado. */
+const CAMPAIGN_ATTRIBUTION_KEY = "lanai_campaign_attribution";
+
+function campaignAttribution(): AnalyticsPayload {
+  const params = new URLSearchParams(window.location.search);
+  const current = {
+    utm_source: params.get("utm_source") || undefined,
+    utm_campaign: params.get("utm_campaign") || undefined,
+    utm_content: params.get("utm_content") || undefined,
+  };
+  if (current.utm_source || current.utm_campaign || current.utm_content) {
+    window.sessionStorage.setItem(CAMPAIGN_ATTRIBUTION_KEY, JSON.stringify(current));
+    return current;
+  }
+  try {
+    return JSON.parse(window.sessionStorage.getItem(CAMPAIGN_ATTRIBUTION_KEY) || "{}") as AnalyticsPayload;
+  } catch {
+    return {};
+  }
+}
+
+/** Camada neutra: registra somente no dataLayer local, sem enviar a provedores externos. */
 export function trackEvent(event: BrowserEventName, payload: AnalyticsPayload = {}) {
   if (typeof window === "undefined") return;
   window.dataLayer = window.dataLayer ?? [];
-  window.dataLayer.push({ event, ...payload });
+  window.dataLayer.push({ event, timestamp: new Date().toISOString(), ...campaignAttribution(), ...payload });
 }
 
 const SEARCH_ATTRIBUTION_KEY = "lanai_search_attribution";
