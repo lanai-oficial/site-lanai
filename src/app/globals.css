@@ -294,7 +294,7 @@ h1,h2,h3 { letter-spacing:-.025em; }
 /* Approved services catalog */
 .services-page>h1 { margin-bottom:clamp(3rem,7vw,6rem); }
 .services-catalog { border-top:1px solid var(--line); }
-.service-category { padding:clamp(3rem,7vw,6rem) 0; border-bottom:1px solid var(--line); }
+.service-category { padding:clamp(3rem,7vw,6rem) 0; border-bottom:1px solid var(--line); scroll-margin-top:7rem; }
 .service-category>header { display:flex; align-items:baseline; gap:1rem; margin-bottom:2rem; }
 .service-category>header h2 { margin:0; font-size:clamp(2.5rem,5vw,4.5rem); }
 .service-category-number,.service-number { color:var(--brand-primary); font-size:.68rem; font-weight:700; letter-spacing:.13em; }

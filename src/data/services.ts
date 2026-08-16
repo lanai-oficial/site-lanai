@@ -9,6 +9,19 @@ export type ServiceCategory = {
   aliases: string[];
 };
 
+export const serviceCatalogDestinations: Record<string, string> = {
+  cabelos: "hair-spa", estetica: "estetica-facial", rosto: "estetica-facial",
+  "estetica-facial": "estetica-facial", corpo: "estetica-corporal",
+  "estetica-corporal": "estetica-corporal", spa: "spa", unhas: "manicure",
+  manicure: "manicure", "nail-design": "nail-design", sobrancelhas: "sobrancelhas",
+  depilacao: "estetica-corporal",
+};
+
+export function getServiceCatalogHref(slug: string) {
+  const destination = serviceCatalogDestinations[slug];
+  return destination ? `/servicos?categoria=${destination}` : "/servicos";
+}
+
 export type ServiceUniverse = {
   slug: UniverseSlug;
   name: string;

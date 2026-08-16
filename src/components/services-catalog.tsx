@@ -24,6 +24,24 @@ export function ServicesCatalog({ categories }: { categories: Category[] }) {
   const closeButton = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
+    const scrollToCategory = () => {
+      const categoryId = new URLSearchParams(window.location.search).get("categoria") ?? decodeURIComponent(window.location.hash.slice(1));
+      if (categoryId) document.getElementById(categoryId)?.scrollIntoView();
+    };
+    const frame = window.requestAnimationFrame(scrollToCategory);
+    const timeout = window.setTimeout(scrollToCategory, 250);
+    document.fonts?.ready.then(scrollToCategory);
+    window.addEventListener("hashchange", scrollToCategory);
+    window.addEventListener("popstate", scrollToCategory);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.clearTimeout(timeout);
+      window.removeEventListener("hashchange", scrollToCategory);
+      window.removeEventListener("popstate", scrollToCategory);
+    };
+  }, []);
+
+  useEffect(() => {
     if (!selectedService) return;
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -38,7 +56,7 @@ export function ServicesCatalog({ categories }: { categories: Category[] }) {
 
   return <>
     <div className="services-catalog">
-      {categories.map((category) => <section className="service-category" key={category.id} aria-labelledby={`category-${category.id}`}>
+      {categories.map((category) => <section className="service-category" id={category.id} key={category.id} aria-labelledby={`category-${category.id}`}>
         <header><span className="service-category-number">{String(category.ordem).padStart(2, "0")}</span><h2 id={`category-${category.id}`}>{category.nome}</h2></header>
         <div className="service-card-grid">
           {category.servicos.map((service) => <button className="service-card" key={service.id} type="button" onClick={() => setSelectedService(service)} aria-haspopup="dialog">
