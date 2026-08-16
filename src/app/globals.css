@@ -290,3 +290,39 @@ h1,h2,h3 { letter-spacing:-.025em; }
   .site-footer .footer-hours-title { margin-top:1rem; }
   .site-footer small { grid-column:1/-1; padding-top:1rem; }
 }
+
+/* Approved services catalog */
+.services-page>h1 { margin-bottom:clamp(3rem,7vw,6rem); }
+.services-catalog { border-top:1px solid var(--line); }
+.service-category { padding:clamp(3rem,7vw,6rem) 0; border-bottom:1px solid var(--line); scroll-margin-top:7rem; }
+.service-category>header { display:flex; align-items:baseline; gap:1rem; margin-bottom:2rem; }
+.service-category>header h2 { margin:0; font-size:clamp(2.5rem,5vw,4.5rem); }
+.service-category-number,.service-number { color:var(--brand-primary); font-size:.68rem; font-weight:700; letter-spacing:.13em; }
+.service-card-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); }
+.service-card { min-height:310px; padding:1.75rem; display:flex; flex-direction:column; align-items:flex-start; border:0; background:#fff; text-align:left; cursor:pointer; transition:background .2s,color .2s; }
+.service-card:hover,.service-card:focus-visible { outline:none; color:#fff; background:var(--brand-primary); }
+.service-card:hover .service-number,.service-card:focus-visible .service-number { color:#fff; }
+.service-card h3 { margin:1.2rem 0 .8rem; font-size:clamp(1.8rem,3vw,2.5rem); }
+.service-card p { margin-bottom:1rem; font-size:.95rem; line-height:1.5; }
+.service-card strong { margin-top:auto; font-size:.9rem; }
+.service-card-action { width:100%; margin-top:1rem; padding-top:1rem; display:flex; justify-content:space-between; border-top:1px solid currentColor; font-size:.66rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+.service-modal-backdrop { position:fixed; z-index:200; inset:0; padding:1rem; display:grid; place-items:center; overflow:auto; background:rgba(24,24,24,.68); }
+.service-modal { position:relative; width:min(680px,100%); max-height:calc(100svh - 2rem); padding:clamp(2rem,6vw,4rem); overflow:auto; background:#fff; box-shadow:0 2rem 5rem rgba(0,0,0,.25); }
+.service-modal-close { position:absolute; top:.75rem; right:.9rem; width:44px; height:44px; border:0; background:transparent; font-size:2rem; font-weight:300; cursor:pointer; }
+.service-modal h2 { margin:.8rem 2.5rem 1rem 0; font-size:clamp(2.7rem,7vw,5rem); }
+.service-modal-price { color:var(--brand-primary); font-weight:700; }
+.service-modal-hook { margin:1.75rem 0 1rem; font-family:var(--font-subtitle),Arial,sans-serif; font-size:clamp(1.15rem,2vw,1.4rem); font-weight:600; }
+.service-modal-audience { margin:1.5rem 0; padding:1.25rem 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.service-modal-audience p,.service-modal-important { margin:0; }
+.service-modal-important { margin-bottom:1.5rem; font-weight:700; }
+.service-modal .button { width:100%; margin:1.5rem 0 0; text-align:center; }
+@media (max-width:800px) {
+  .services-page { padding-top:4rem; }
+  .services-page>h1 { font-size:clamp(3.8rem,20vw,5rem); }
+  .service-card-grid { grid-template-columns:1fr; }
+  .service-card { min-height:245px; padding:1.4rem; }
+  .service-card h3 { font-size:2.25rem; }
+  .service-modal-backdrop { padding:0; place-items:end center; }
+  .service-modal { width:100%; max-height:92svh; padding:2rem 1.25rem 1.25rem; }
+}
+@media (min-width:801px) and (max-width:1100px) { .service-card-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
