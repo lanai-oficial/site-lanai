@@ -1,0 +1,694 @@
+{
+  "metadata": {
+    "version": "1.0-producao",
+    "data_atual": "2026-08-16",
+    "total_servicos": 33,
+    "status": "aprovado-implementacao",
+    "notas": "Copy aprovada por Celina Fernandes. Não alterar conteúdo. Implementar exatamente como estruturado."
+  },
+  "categorias": [
+    {
+      "id": "hair-spa",
+      "nome": "Hair Spa",
+      "ordem": 1,
+      "total_servicos": 5,
+      "servicos": [
+        {
+          "id": "escova",
+          "numero": 1,
+          "nome": "Escova",
+          "preco_minimo": 100,
+          "preco_maximo": 180,
+          "moeda": "BRL",
+          "tier1": {
+            "frase_curta": "Cabelo pronto. Do jeito que você gosta."
+          },
+          "tier2": {
+            "gancho": "Quando você quer sair impecável.",
+            "descricao": "Secagem e modelagem profissional que cria movimento, alinhamento, volume ou forma conforme o resultado que você busca.",
+            "para_quem_e": "Quem quer acabamento profissional sem técnica adicional.",
+            "informacao_importante": null
+          },
+          "cta": "Agendar horário",
+          "cta_whatsapp_mensagem": "Olá, gostaria de agendar uma Escova"
+        },
+        {
+          "id": "corte",
+          "numero": 2,
+          "nome": "Corte",
+          "preco_minimo": 250,
+          "preco_maximo": 330,
+          "moeda": "BRL",
+          "tier1": {
+            "frase_curta": "Um corte que muda o jeito de você se ver."
+          },
+          "tier2": {
+            "gancho": "Corte é muito mais que tirar comprimento.",
+            "descricao": "Corte profissional que parte do que você deseja e considera o comportamento natural do seu cabelo, sua rotina e suas preferências. O resultado é forma, movimento e caimento pensados para você.",
+            "para_quem_e": "Quem busca um corte que funcione com seu cabelo, não contra ele.",
+            "informacao_importante": null
+          },
+          "cta": "Agendar horário",
+          "cta_whatsapp_mensagem": "Olá, gostaria de agendar um Corte"
+        },
+        {
+          "id": "tratamento-capilar",
+          "numero": 3,
+          "nome": "Tratamento Capilar",
+          "preco_minimo": 220,
+          "preco_maximo": 550,
+          "moeda": "BRL",
+          "tier1": {
+            "frase_curta": "Fios que respiram de novo."
+          },
+          "tier2": {
+            "gancho": "Seu cabelo fala o que precisa.",
+            "descricao": "Tratamento selecionado conforme a necessidade real dos fios — hidratação, nutrição, reparação ou manutenção. O profissional identifica e aplica o protocolo adequado para restaurar maciez, brilho e maleabilidade.",
+            "para_quem_e": "Cabelos ressecados, danificados, quimicamente tratados ou simplesmente negligenciados.",
+            "informacao_importante": null
+          },
+          "cta": "Agendar horário",
+          "cta_whatsapp_mensagem": "Olá, gostaria de agendar um Tratamento Capilar"
+        },
+        {
+          "id": "coloracao",
+          "numero": 4,
+          "nome": "Coloração",
+          "preco_minimo": 280,
+          "preco_maximo": 880,
+          "moeda": "BRL",
+          "tier1": {
+            "frase_curta": "Uma nova cor. Ainda você."
+          },
+          "tier2": {
+            "gancho": "Cor é identidade.",
+            "descricao": "Coloração profissional que transforma, intensifica ou renova. Parte de uma conversa sobre o que você quer, o histórico do seu cabelo e o resultado que faz sentido para sua vida.",
+            "para_quem_e": "Quem quer mudança genuína, cobertura de grisalhos ou renovação de cor.",
+            "informacao_importante": null
+          },
+          "cta": "Agendar horário",
+          "cta_whatsapp_mensagem": "Olá, gostaria de agendar uma Coloração"
+        },
+        {
+          "id": "luzes",
+          "numero": 5,
+          "nome": "Luzes",
+          "preco_minimo": 550,
+          "preco_maximo": 1700,
+          "moeda": "BRL",
+          "tier1": {
+            "frase_curta": "Movimento e luminosidade."
+          },
+          "tier2": {
+            "gancho": "Luz em pontos certos cria profundidade.",
+            "descricao": "Mechas estrategicamente clareadas para criar dimensão, contraste e movimento no cabelo. A distribuição, intensidade e efeito são customizados conforme o resultado que você imagina.",
+            "para_quem_e": "Quem quer transformação gradual e natural, ou intensidade visual em pontos específicos.",
+            "informacao_importante": null
+          },
+          "cta": "Agendar horário",
+          "cta_whatsapp_mensagem": "Olá, gostaria de agendar Luzes"
+        }
+      ]
+    },
+    {
+      "id": "estetica-facial",
+      "nome": "Estética Facial",
+      "ordem": 2,
+      "total_servicos": 4,
+      "servicos": [
+        {
+          "id": "hidratacao-facial-hyalu",
+          "numero": 6,
+          "nome": "Hidratação Facial HYALU",
+          "preco_minimo": 220,
+          "preco_maximo": 220,
+          "moeda": "BRL",
+          "tier1": {
+            "frase_curta": "Hidratação que a pele sente."
+          },
+          "tier2": {
+            "gancho": "Quando a pele está gritando por hidratação.",
+            "descricao": "Protocolo que começa com limpeza profunda, passa por esfoliação suave, tonificação, aplicação de sérum com ácido hialurônico e máscara. Finaliza com protetor solar para fixar toda a hidratação.",
+            "para_quem_e": "Pele ressecada, desidratada, sem brilho ou qualquer pele que precisa de reabastecimento hídrico profundo.",
+            "informacao_importante": "Duração: 1 hora."
+          },
+          "cta": "Agendar horário",
+          "cta_whatsapp_mensagem": "Olá, gostaria de agendar Hidratação Facial HYALU"
+        },
+        {
+          "id": "limpeza-de-pele",
+          "numero": 7,
+          "nome": "Limpeza de Pele",
+          "preco_minimo": 290,
+          "preco_maximo": 290,
+          "moeda": "BRL",
+          "tier1": {
+            "frase_curta": "Pele limpa. Leve. Cuidada."
+          },
+          "tier2": {
+            "gancho": "Limpeza profunda que a sua pele precisava.",
+            "descricao": "Protocolo que remove impurezas, desobstrui poros e trabalha a claridade. Inclui higienização, esfoliação, aplicação de cosméticos, vapor de ozônio, extração profissional e finalização com máscara e protetor solar.",
+            "para_quem_e": "Pele oleosa, com poros dilatados, acne, falta de brilho ou simplesmente que precisa de limpeza profissional.",
+            "informacao_importante": "Duração: 1 hora 30 minutos."
+          },
+          "cta": "Agendar horário",
+          "cta_whatsapp_mensagem": "Olá, gostaria de agendar Limpeza de Pele"
+        },
+        {
+          "id": "peeling-de-diamante",
+          "numero": 8,
+          "nome": "Peeling de Diamante",
+          "preco_minimo": 295,
+          "preco_maximo": 295,
+          "moeda": "BRL",
+          "tier1": {
+            "frase_curta": "Uma pele mais lisa ao toque."
+          },
+          "tier2": {
+            "gancho": "Esfoliação refinada que respeita a pele.",
+            "descricao": "Peeling mecânico que remove camadas superficiais estimulando renovação celular. Deixa a pele mais suave, uniforme e com absorção maior de produtos. Finaliza com máscara e protetor solar.",
+            "para_quem_e": "Pele com textura irregular, falta de brilho, ressecamento ou que precisa de renovação suave.",
+            "informacao_importante": "Duração: 1 hora."
+          },
+          "cta": "Agendar horário",
+          "cta_whatsapp_mensagem": "Olá, gostaria de agendar Peeling de Diamante"
+        },
+        {
+          "id": "radiofrequencia-facial",
+          "numero": 9,
+          "nome": "Radiofrequência Facial",
+          "preco_minimo": 250,
+          "preco_maximo": 250,
+          "moeda": "BRL",
+          "tier1": {
+            "frase_curta": "Firmeza começa no colágeno."
+          },
+          "tier2": {
+            "gancho": "Tecnologia que ativa a pele internamente.",
+            "descricao": "Tratamento com radiofrequência que estimula a produção de colágeno e elastina. A pele é aquecida em profundidade, ativando os mecanismos naturais de firmeza e renovação. Finaliza com máscara e protetor solar.",
+            "para_quem_e": "Pele que busca melhora em firmeza e vitalidade.",
+            "informacao_importante": "Duração: 1 hora."
+          },
+          "cta": "Agendar horário",
+          "cta_whatsapp_mensagem": "Olá, gostaria de agendar Radiofrequência Facial"
+        }
+      ]
+    },
+    {
+      "id": "estetica-corporal",
+      "nome": "Estética Corporal",
+      "ordem": 3,
+      "total_servicos": 8,
+      "servicos": [
+        {
+          "id": "body-firm",
+          "numero": 10,
+          "nome": "Body Firm",
+          "preco_minimo": 230,
+          "preco_maximo": 230,
+          "moeda": "BRL",
+          "tier1": {
+            "frase_curta": "Firmeza onde você quer."
+          },
+          "tier2": {
+            "gancho": "Quando a pele corporal perde elasticidade.",
+            "descricao": "Tratamento direcionado à flacidez que trabalha a pele com radiofrequência, seguido de aplicação de cosmético específico para potencializar a firmeza.",
+            "para_quem_e": "Quem sente perda de elasticidade corporal e quer recuperar tônus e definição.",
+            "informacao_importante": "Duração: 1 hora."
+          },
+          "cta": "Agendar horário",
+          "cta_whatsapp_mensagem": "Olá, gostaria de agendar Body Firm"
+        },
+        {
+          "id": "criofrequencia-corporal",
+          "numero": 11,
+          "nome": "Criofrequência Corporal",
+          "preco_minimo": 390,
+          "preco_maximo": 390,
+          "moeda": "BRL",
+          "tier1": {
+            "frase_curta": "Tecnologia para redefinir contornos."
+          },
+          "tier2": {
+            "gancho": "Duas tecnologias trabalham juntas.",
+            "descricao": "Tratamento que combina frio e radiofrequência para trabalhar a pele corporal conforme o objetivo — pode ser gordura localizada, flacidez ou ambas. O protocolo é personalizado para cada sessão.",
+            "para_quem_e": "Quem busca resultado corporal intensivo e específico.",
+            "informacao_importante": null
+          },
+          "cta": "Agendar horário",
+          "cta_whatsapp_mensagem": "Olá, gostaria de agendar Criofrequência Corporal"
+        },
+        {
+          "id": "duo-lanai",
+          "numero": 12,
+          "nome": "Duo Lanai",
+          "preco_minimo": 390,
+          "preco_maximo": 390,
+          "moeda": "BRL",
+          "tier1": {
+            "frase_curta": "Duas tecnologias. Um só objetivo."
+          },
+          "tier2": {
+            "gancho": "Quando uma técnica não é suficiente.",
+            "descricao": "Protocolo que associa dois aparelhos ou técnicas diferentes na mesma sessão, em uma área específica. A combinação é escolhida conforme seu objetivo, potencializando o resultado. Finaliza com cosmético específico.",
+            "para_quem_e": "Quem busca resultado intensivo em uma região específica.",
+            "informacao_importante": "Duração: 1 hora."
+          },
+          "cta": "Agendar horário",
+          "cta_whatsapp_mensagem": "Olá, gostaria de agendar Duo Lanai"
+        },
+        {
+          "id": "endermologia",
+          "numero": 13,
+          "nome": "Endermologia",
+          "preco_minimo": 230,
+          "preco_maximo": 230,
+          "moeda": "BRL",
+          "tier1": {
+            "frase_curta": "Pele mais lisa e uniforme."
+          },
+          "tier2": {
+            "gancho": "Tecnologia mecanizada que trabalha textura.",
+            "descricao": "Tratamento que utiliza técnica mecanizada de massagem e sucção para estimular a circulação e melhorar a aparência da pele. Trabalha regiões que visualmente incomodam, buscando melhora em textura e contorno.",
+            "para_quem_e": "Quem sente que a pele do corpo precisa de trabalho de aparência e textura.",
+            "informacao_importante": null
+          },
+          "cta": "Agendar horário",
+          "cta_whatsapp_mensagem": "Olá, gostaria de agendar Endermologia"
+        },
+        {
+          "id": "limpeza-pele-costas",
+          "numero": 14,
+          "nome": "Limpeza de Pele de Costas",
+          "preco_minimo": 310,
+          "preco_maximo": 310,
+          "moeda": "BRL",
+          "tier1": {
+            "frase_curta": "Cuidado que alcança até as costas."
+          },
+          "tier2": {
+            "gancho": "A região que você não consegue limpar sozinha.",
+            "descricao": "Limpeza profunda voltada especificamente para as costas. Inclui higienização, esfoliação, aplicação de cosméticos, extração, tratamento com LED azul e máscara. Finaliza com protetor solar.",
+            "para_quem_e": "Pele das costas oleosa, com acne, falta de brilho ou textura irregular.",
+            "informacao_importante": "Duração: 1 hora 30 minutos."
+          },
+          "cta": "Agendar horário",
+          "cta_whatsapp_mensagem": "Olá, gostaria de agendar Limpeza de Pele de Costas"
+        },
+        {
+          "id": "sculp-lanai",
+          "numero": 15,
+          "nome": "Sculp Lanai",
+          "preco_minimo": 230,
+          "preco_maximo": 230,
+          "moeda": "BRL",
+          "tier1": {
+            "frase_curta": "Para onde o contorno pede atenção."
+          },
+          "tier2": {
+            "gancho": "Várias técnicas trabalham a mesma região.",
+            "descricao": "Protocolo que combina ultrassom, corrente elétrica e técnicas de drenagem para trabalhar gordura localizada. Finaliza com massagem modeladora na área tratada para absorção e definição.",
+            "para_quem_e": "Quem busca redefinição em regiões específicas com gordura localizada.",
+            "informacao_importante": "Duração: 1 hora."
+          },
+          "cta": "Agendar horário",
+          "cta_whatsapp_mensagem": "Olá, gostaria de agendar Sculp Lanai"
+        },
+        {
+          "id": "shape-detox",
+          "numero": 16,
+          "nome": "Shape Detox",
+          "preco_minimo": 390,
+          "preco_maximo": 390,
+          "moeda": "BRL",
+          "tier1": {
+            "frase_curta": "Leveza e cuidado de corpo inteiro."
+          },
+          "tier2": {
+            "gancho": "Protocolo completo de corpo inteiro.",
+            "descricao": "Desintoxicação corporal que combina esfoliação profunda, aplicação de cosmético ativo com envolvimento térmico, massagem corporal revitalizante e finalização com massagem relaxante nas costas. Busca auxílio na remodelação, celulite e flacidez.",
+            "para_quem_e": "Quem quer trabalho completo de desintoxicação e remodelagem corporal.",
+            "informacao_importante": "Duração: 1 hora."
+          },
+          "cta": "Agendar horário",
+          "cta_whatsapp_mensagem": "Olá, gostaria de agendar Shape Detox"
+        },
+        {
+          "id": "toni-sculp",
+          "numero": 17,
+          "nome": "Toni Sculp",
+          "preco_minimo": 230,
+          "preco_maximo": 230,
+          "moeda": "BRL",
+          "tier1": {
+            "frase_curta": "Tonificação sem movimento."
+          },
+          "tier2": {
+            "gancho": "Quando você quer trabalhar o tônus.",
+            "descricao": "Tratamento que usa estimulação elétrica para provocar contrações musculares na região trabalhada, tonificando a musculatura sem você precisar fazer exercício. Pode ser aplicado em regiões como abdômen e braços.",
+            "para_quem_e": "Quem quer resgatar tônus em áreas que perderam definição.",
+            "informacao_importante": null
+          },
+          "cta": "Agendar horário",
+          "cta_whatsapp_mensagem": "Olá, gostaria de agendar Toni Sculp"
+        }
+      ]
+    },
+    {
+      "id": "spa",
+      "nome": "Spa",
+      "ordem": 4,
+      "total_servicos": 7,
+      "servicos": [
+        {
+          "id": "summer-detox",
+          "numero": 18,
+          "nome": "Summer Detox",
+          "preco_minimo": 290,
+          "preco_maximo": 290,
+          "moeda": "BRL",
+          "tier1": {
+            "frase_curta": "Duas horas para o corpo desacelerar."
+          },
+          "tier2": {
+            "gancho": "Protocolo de corpo inteiro.",
+            "descricao": "Desintoxicação que começa com esfoliação corporal profunda, passa por aplicação de cosmético com envolvimento térmico aproximadamente 30 minutos, seguida de massagem corporal revitalizante. Finaliza com massagem relaxante nas costas.",
+            "para_quem_e": "Quem busca desintoxicação profunda e sensação de corpo renovado.",
+            "informacao_importante": "Duração: 2 horas."
+          },
+          "cta": "Agendar horário",
+          "cta_whatsapp_mensagem": "Olá, gostaria de agendar Summer Detox"
+        },
+        {
+          "id": "drenagem-linfatica",
+          "numero": 19,
+          "nome": "Drenagem Linfática",
+          "preco_minimo": 220,
+          "preco_maximo": 220,
+          "moeda": "BRL",
+          "tier1": {
+            "frase_curta": "Para quando o corpo pede leveza."
+          },
+          "tier2": {
+            "gancho": "Quando você sente inchaço ou quer bem-estar.",
+            "descricao": "Técnica manual de drenagem linfática que ativa a circulação, melhora o edema e promove bem-estar. Manobras específicas trabalham o sistema linfático. Finaliza com massagem relaxante nas costas.",
+            "para_quem_e": "Quem sente inchaço, retenção ou busca alívio e renovação corporal.",
+            "informacao_importante": "Duração: 1 hora."
+          },
+          "cta": "Agendar horário",
+          "cta_whatsapp_mensagem": "Olá, gostaria de agendar Drenagem Linfática"
+        },
+        {
+          "id": "massagem-modeladora",
+          "numero": 20,
+          "nome": "Massagem Modeladora",
+          "preco_minimo": 230,
+          "preco_maximo": 230,
+          "moeda": "BRL",
+          "tier1": {
+            "frase_curta": "Contorno trabalhado pelas mãos."
+          },
+          "tier2": {
+            "gancho": "Massagem que trabalha modelagem.",
+            "descricao": "Protocolo que começa com esfoliação e passa por manobras mais profundas de massagem modeladora. Trabalha musculatura e tecido para estimular circulação e contribuir para melhora de contorno corporal.",
+            "para_quem_e": "Quem busca redefinição de contorno através de massagem.",
+            "informacao_importante": "Duração: 1 hora."
+          },
+          "cta": "Agendar horário",
+          "cta_whatsapp_mensagem": "Olá, gostaria de agendar Massagem Modeladora"
+        },
+        {
+          "id": "drenadux",
+          "numero": 21,
+          "nome": "Drenadux",
+          "preco_minimo": 250,
+          "preco_maximo": 250,
+          "moeda": "BRL",
+          "tier1": {
+            "frase_curta": "Drenagem e modelagem combinadas."
+          },
+          "tier2": {
+            "gancho": "Duas técnicas trabalham juntas.",
+            "descricao": "Protocolo único que combina técnicas de drenagem linfática com manobras de massagem modeladora. Trabalha inchaço, retenção hídrica e aspecto de celulite simultaneamente. Finaliza com massagem relaxante nas costas.",
+            "para_quem_e": "Quem quer trabalho simultâneo de drenagem e remodelagem.",
+            "informacao_importante": "Duração: 1 hora."
+          },
+          "cta": "Agendar horário",
+          "cta_whatsapp_mensagem": "Olá, gostaria de agendar Drenadux"
+        },
+        {
+          "id": "massagem-sensi",
+          "numero": 22,
+          "nome": "Massagem Sensi",
+          "preco_minimo": 230,
+          "preco_maximo": 230,
+          "moeda": "BRL",
+          "tier1": {
+            "frase_curta": "Pausa profunda para o corpo."
+          },
+          "tier2": {
+            "gancho": "Quando você precisa apenas desacelerar.",
+            "descricao": "Massagem no corpo inteiro com movimentos rítmicos, lentos e pressão leve. Pensada para relaxamento corporal genuíno, sem agressão ou intensidade. Deixa o corpo desacelerado e a mente em repouso.",
+            "para_quem_e": "Quem busca descanso, alívio de tensão ou momento de pura pausa.",
+            "informacao_importante": "Duração: 1 hora."
+          },
+          "cta": "Agendar horário",
+          "cta_whatsapp_mensagem": "Olá, gostaria de agendar Massagem Sensi"
+        },
+        {
+          "id": "pedras-quentes",
+          "numero": 23,
+          "nome": "Pedras Quentes",
+          "preco_minimo": 250,
+          "preco_maximo": 250,
+          "moeda": "BRL",
+          "tier1": {
+            "frase_curta": "Calor que descontrai."
+          },
+          "tier2": {
+            "gancho": "Quando o corpo pede conforto.",
+            "descricao": "Massagem onde pedras aquecidas são usadas para criar a experiência. O calor é o protagonista, ajudando a liberar tensão muscular profunda e promover relaxamento corporal genuíno.",
+            "para_quem_e": "Quem tem tensão concentrada e quer sensação de descontração via calor.",
+            "informacao_importante": null
+          },
+          "cta": "Agendar horário",
+          "cta_whatsapp_mensagem": "Olá, gostaria de agendar Pedras Quentes"
+        },
+        {
+          "id": "quick-massage",
+          "numero": 24,
+          "nome": "Quick Massage",
+          "preco_minimo": 180,
+          "preco_maximo": 180,
+          "moeda": "BRL",
+          "tier1": {
+            "frase_curta": "Uma pausa que cabe no seu dia."
+          },
+          "tier2": {
+            "gancho": "Quando o tempo é curto.",
+            "descricao": "Massagem em formato reduzido para quem precisa de alívio e cuidado, mas tem agenda apertada. Profissional trabalha onde você precisa em menos tempo.",
+            "para_quem_e": "Quem quer encaixar massagem em uma rotina cheia.",
+            "informacao_importante": null
+          },
+          "cta": "Agendar horário",
+          "cta_whatsapp_mensagem": "Olá, gostaria de agendar Quick Massage"
+        }
+      ]
+    },
+    {
+      "id": "manicure",
+      "nome": "Manicure",
+      "ordem": 5,
+      "total_servicos": 4,
+      "servicos": [
+        {
+          "id": "embelezamento-maos",
+          "numero": 25,
+          "nome": "Embelezamento das Mãos",
+          "preco_minimo": 41,
+          "preco_maximo": 41,
+          "moeda": "BRL",
+          "tier1": {
+            "frase_curta": "Mãos bem-acabadas."
+          },
+          "tier2": {
+            "gancho": "Cuidado essencial das mãos.",
+            "descricao": "Serviço de beleza estética das unhas das mãos que deixa o acabamento impecável e as mãos visualmente cuidadas.",
+            "para_quem_e": "Quem quer manutenção estética das mãos.",
+            "informacao_importante": null
+          },
+          "cta": "Agendar horário",
+          "cta_whatsapp_mensagem": "Olá, gostaria de agendar Embelezamento das Mãos"
+        },
+        {
+          "id": "embelezamento-pes",
+          "numero": 26,
+          "nome": "Embelezamento dos Pés",
+          "preco_minimo": 49,
+          "preco_maximo": 49,
+          "moeda": "BRL",
+          "tier1": {
+            "frase_curta": "Pés bem-acabados."
+          },
+          "tier2": {
+            "gancho": "Cuidado essencial dos pés.",
+            "descricao": "Serviço de beleza estética das unhas dos pés que deixa o acabamento impecável e os pés visualmente cuidados.",
+            "para_quem_e": "Quem quer manutenção estética dos pés.",
+            "informacao_importante": null
+          },
+          "cta": "Agendar horário",
+          "cta_whatsapp_mensagem": "Olá, gostaria de agendar Embelezamento dos Pés"
+        },
+        {
+          "id": "spa-maos",
+          "numero": 27,
+          "nome": "Spa das Mãos",
+          "preco_minimo": 80,
+          "preco_maximo": 80,
+          "moeda": "BRL",
+          "tier1": {
+            "frase_curta": "Um cuidado a mais para as mãos."
+          },
+          "tier2": {
+            "gancho": "Muito mais que uma manicure.",
+            "descricao": "Protocolo ampliado de cuidado das mãos que vai além da estética das unhas. Trabalha a pele das mãos com esfoliação, hidratação e cuidado, deixando mãos macias e revitalizadas.",
+            "para_quem_e": "Quem busca cuidado completo das mãos, não só das unhas.",
+            "informacao_importante": "Cutilagem e esmaltação estão inclusas."
+          },
+          "cta": "Agendar horário",
+          "cta_whatsapp_mensagem": "Olá, gostaria de agendar Spa das Mãos"
+        },
+        {
+          "id": "spa-pes",
+          "numero": 28,
+          "nome": "Spa dos Pés",
+          "preco_minimo": 120,
+          "preco_maximo": 120,
+          "moeda": "BRL",
+          "tier1": {
+            "frase_curta": "Pés macios e descansados."
+          },
+          "tier2": {
+            "gancho": "Muito mais que uma pedicure.",
+            "descricao": "Protocolo ampliado de cuidado dos pés que trabalha a pele além das unhas. Esfoliação, hidratação, massagem e cuidado completo deixam os pés macios, hidratados e descansados.",
+            "para_quem_e": "Quem quer cuidado completo dos pés, não só das unhas.",
+            "informacao_importante": "Cutilagem e esmaltação estão inclusas."
+          },
+          "cta": "Agendar horário",
+          "cta_whatsapp_mensagem": "Olá, gostaria de agendar Spa dos Pés"
+        }
+      ]
+    },
+    {
+      "id": "nail-design",
+      "nome": "Nail Design",
+      "ordem": 6,
+      "total_servicos": 4,
+      "servicos": [
+        {
+          "id": "alongamento-acrilico",
+          "numero": 29,
+          "nome": "Alongamento de Unha em Acrílico",
+          "preco_minimo": 260,
+          "preco_maximo": 260,
+          "moeda": "BRL",
+          "tier1": {
+            "frase_curta": "Comprimento, forma e estrutura."
+          },
+          "tier2": {
+            "gancho": "Quando você quer comprimento real.",
+            "descricao": "Sistema acrílico que cria comprimento além da unha natural e oferece estrutura duradoura. Permite formato personalizado e acabamento resistente.",
+            "para_quem_e": "Quem deseja unhas alongadas com comprimento real e durabilidade.",
+            "informacao_importante": "Cutilagem e esmaltação não estão inclusas."
+          },
+          "cta": "Agendar horário",
+          "cta_whatsapp_mensagem": "Olá, gostaria de agendar Alongamento de Unha em Acrílico"
+        },
+        {
+          "id": "manutencao-acrilico",
+          "numero": 30,
+          "nome": "Manutenção de Alongamento em Acrílico",
+          "preco_minimo": 160,
+          "preco_maximo": 160,
+          "moeda": "BRL",
+          "tier1": {
+            "frase_curta": "Seu alongamento, bem cuidado."
+          },
+          "tier2": {
+            "gancho": "Manter o que você conquistou.",
+            "descricao": "Conforme a unha natural cresce, o alongamento precisa ser reequilibrado. A manutenção reconstrói a estrutura mantendo o comprimento e a beleza do seu alongamento.",
+            "para_quem_e": "Quem já tem alongamento e quer manter perfeito.",
+            "informacao_importante": "Cutilagem e esmaltação não estão inclusas."
+          },
+          "cta": "Agendar horário",
+          "cta_whatsapp_mensagem": "Olá, gostaria de agendar Manutenção de Alongamento em Acrílico"
+        },
+        {
+          "id": "banho-gel",
+          "numero": 31,
+          "nome": "Banho de Gel",
+          "preco_minimo": 210,
+          "preco_maximo": 210,
+          "moeda": "BRL",
+          "tier1": {
+            "frase_curta": "Unhas reforçadas e resistentes."
+          },
+          "tier2": {
+            "gancho": "Mais que esmaltação convencional.",
+            "descricao": "Aplicação de gel construtor que reforça a unha natural, adicionando estrutura e resistência sem criar alongamento. Mantém seu comprimento natural com acabamento duradouro e proteção.",
+            "para_quem_e": "Quem quer fortalecimento da unha natural e durabilidade de cor sem alongar.",
+            "informacao_importante": "Cutilagem e esmaltação estão inclusas."
+          },
+          "cta": "Agendar horário",
+          "cta_whatsapp_mensagem": "Olá, gostaria de agendar Banho de Gel"
+        },
+        {
+          "id": "manutencao-gel",
+          "numero": 32,
+          "nome": "Manutenção Banho de Gel",
+          "preco_minimo": 140,
+          "preco_maximo": 140,
+          "moeda": "BRL",
+          "tier1": {
+            "frase_curta": "Seu banho de gel renovado."
+          },
+          "tier2": {
+            "gancho": "Mantendo a perfeição.",
+            "descricao": "Conforme a unha natural cresce, o overlay de gel precisa ser reequilibrado. A manutenção reconstrói a estrutura mantendo a proteção e o acabamento do seu banho de gel.",
+            "para_quem_e": "Quem já usa banho de gel e quer manter impecável.",
+            "informacao_importante": "Cutilagem e esmaltação estão inclusas."
+          },
+          "cta": "Agendar horário",
+          "cta_whatsapp_mensagem": "Olá, gostaria de agendar Manutenção Banho de Gel"
+        }
+      ]
+    },
+    {
+      "id": "sobrancelhas",
+      "nome": "Sobrancelhas",
+      "ordem": 7,
+      "total_servicos": 1,
+      "servicos": [
+        {
+          "id": "design-sobrancelhas",
+          "numero": 33,
+          "nome": "Design de Sobrancelhas",
+          "preco_minimo": 120,
+          "preco_maximo": 120,
+          "moeda": "BRL",
+          "tier1": {
+            "frase_curta": "Uma sobrancelha muda tudo."
+          },
+          "tier2": {
+            "gancho": "Equilíbrio que transforma o olhar.",
+            "descricao": "Desenho personalizado que observa proporção, simetria e estrutura natural para criar uma sobrancelha em equilíbrio. Respeita as características naturais enquanto cria formato que funciona com seu rosto.",
+            "para_quem_e": "Quem quer sobrancelha bem-definida e equilibrada.",
+            "informacao_importante": null
+          },
+          "cta": "Agendar horário",
+          "cta_whatsapp_mensagem": "Olá, gostaria de agendar Design de Sobrancelhas"
+        }
+      ]
+    }
+  ]
+}
