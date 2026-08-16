@@ -3,25 +3,17 @@
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";
+import type { CatalogCategory, CatalogService } from "@/data/catalog";
 import { trackEvent } from "@/lib/analytics";
-
-type Service = {
-  id: string; numero: number; nome: string; preco_minimo: number; preco_maximo: number; moeda: string;
-  tier1: { frase_curta: string };
-  tier2: { gancho: string; descricao: string; para_quem_e: string; informacao_importante: string | null };
-  cta: string; cta_whatsapp_mensagem: string;
-};
-
-type Category = { id: string; nome: string; ordem: number; total_servicos: number; servicos: Service[] };
 
 const priceFormatter = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL", minimumFractionDigits: 0, maximumFractionDigits: 0 });
 
-function servicePrice(service: Service) {
+function servicePrice(service: CatalogService) {
   const minimum = priceFormatter.format(service.preco_minimo);
   return service.preco_minimo === service.preco_maximo ? minimum : `${minimum} – ${priceFormatter.format(service.preco_maximo)}`;
 }
 
-export function ServicesCatalog({ categories }: { categories: Category[] }) {
+export function ServicesCatalog({ categories }: { categories: CatalogCategory[] }) {
   const selectedCategory = useSearchParams().get("categoria");
   const visibleCategories = selectedCategory ? categories.filter(({ id }) => id === selectedCategory) : categories;
 
