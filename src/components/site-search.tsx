@@ -2,14 +2,14 @@
 
 import Link from "next/link";
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
-import servicesCatalog from "@/data/lanai_33_servicos_v1_producao.json";
+import { serviceCatalog } from "@/data/catalog";
 import { rememberSearchAttribution, trackEvent } from "@/lib/analytics";
 
 function normalize(value: string) {
   return value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("pt-BR").replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
 }
 
-const searchableServices = servicesCatalog.categorias.flatMap((category) => category.servicos.map((service) => ({
+const searchableServices = serviceCatalog.categorias.flatMap((category) => category.servicos.map((service) => ({
   id: service.id,
   href: `/servicos/${service.id}`,
   type: "Serviço",
