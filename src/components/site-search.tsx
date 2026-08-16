@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
-import { serviceCategories, serviceUniverses } from "@/data/services";
+import { getServiceCatalogHref, serviceCategories, serviceUniverses } from "@/data/services";
 import { rememberSearchAttribution, trackEvent } from "@/lib/analytics";
 
 function normalize(value: string) {
@@ -11,7 +11,7 @@ function normalize(value: string) {
 
 const searchableServices = serviceCategories.map((service) => ({
   id: service.slug,
-  href: `/servicos/${service.slug}`,
+  href: getServiceCatalogHref(service.slug),
   type: "Serviço",
   name: service.name,
   description: service.description,
